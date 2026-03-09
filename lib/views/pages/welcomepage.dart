@@ -1,4 +1,4 @@
-import 'package:bookmark/widget/widget_tree.dart';
+import 'package:bookmark/widget_tree.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePageWidget extends StatelessWidget {

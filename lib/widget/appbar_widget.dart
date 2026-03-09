@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 
-class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  final Color backgroundColor;
+  final double elevation;
   final List<Widget>? actions;
   final Widget? leading;
 
-  const AppBarWidget({
-    Key? key,
+  const CustomAppBar({
+    super.key,
     required this.title,
+    this.backgroundColor = const Color.fromARGB(142, 255, 193, 7),
+    this.elevation = 4.0,
     this.actions,
     this.leading,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
+      title: Align(
+    alignment: Alignment.centerLeft,
+    child: Text(title),
+  ),
+      backgroundColor: backgroundColor,
+      elevation: elevation,
       actions: actions,
       leading: leading,
-      backgroundColor: Colors.blue, // Customize as needed
-      elevation: 4, // Customize as needed
     );
   }
 
